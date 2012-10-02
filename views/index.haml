@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Github Profile
+    %link( rel="stylesheet" href="/assets/application.css" type="text/css" )
+    :javascript
+      var Profile = {};
+  %body
+    .container
+      .row
+        .span12
+          #user-profile
+            %em Loading
+
+    :javascript
+      Profile.user = #{@user};
+    %script( type="text/javascript" src="/assets/application.js" )
