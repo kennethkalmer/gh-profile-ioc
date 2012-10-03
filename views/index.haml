@@ -9,9 +9,13 @@
     .container
       .row
         .span12
+          .download
+            %a( href="/pdf" target="_blank" ) Download as PDF
+      .row
+        .span12
           #user-profile
             %em Loading
 
     :javascript
-      Profile.user = #{@user};
+      Profile.user = #{@user.to_json};
     %script( type="text/javascript" src="/assets/application.js" )

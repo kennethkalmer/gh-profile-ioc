@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'user'
+require 'pdf'
 
 module Profile
   class Web < Sinatra::Base
@@ -6,8 +8,13 @@ module Profile
     set :root, File.expand_path('../../', __FILE__)
 
     get '/' do
-      @user = File.read( File.expand_path('../../data/user.json', __FILE__) )
+      @user = User.new
       haml :index
+    end
+
+    get '/pdf' do
+      attachment "gtihub.pdf"
+      Profile::Pdf.new( User.new ).stream
     end
 
   end
