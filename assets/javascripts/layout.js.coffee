@@ -6,4 +6,10 @@ class Profile.Layout
     @view = options.view
 
   render: ->
-    @view.render( @user.attributes )
+    context =
+      login: @user.get('login')
+      name: @user.get('name')
+
+    context.login = "@#{context.login}"
+
+    @view.render( context )
