@@ -7,6 +7,7 @@ gem 'sinatra'
 gem 'haml'
 gem 'sprockets'
 gem 'handlebars_assets'
+gem 'haml_assets'
 
 gem 'prawn'
 gem 'therubyracer', require: 'v8'
